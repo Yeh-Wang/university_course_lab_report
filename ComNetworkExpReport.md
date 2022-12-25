@@ -2,11 +2,34 @@
 
 ---
 
-## 目录
-
-## **验证性实验**  
-
-### ***ipconfig***
+* [验证性实验](#验证性实验)
+  * [ipconfig](#ipconfig)  
+  * [ping](#ping)  
+  * [tracert](#tracert)  
+  * [ARP](#arp)  
+  * [DHCP](#dhcp)  
+  * [netstat](#netstat)
+  * [DNS](#dns)  
+  * [cache](#cache)  
+* [Wireshark 实验](#wireshark实验)
+  * [数据链路层](#数据链路层)  
+  * [网络层](#网络层)  
+  * [传输层](#传输层)  
+  * [应用层](#应用层)  
+* [Cisco Packet Tracer 实验](#cisco-packet-tracer-实验)
+  * [直接连接两台PC构建LAN](#直接连接两台-pc-构建-lan)  
+  * [用交换机构建LAN](#用交换机构建-lan)  
+  * [交换机接口地址列表](#交换机接口地址列表)  
+  * [生成树协议（spanning-tree-protocol）](#生成树协议spanning-tree-protocol)  
+  * [路由器配置初步](#路由器配置初步)  
+  * [静态路由](#静态路由)  
+  * [动态路由 RIP](#动态路由-rip)  
+  * [动态路由 OSPF](#动态路由-ospf)  
+  * [基于端口的网络地址翻译 PAT](#基于端口的网络地址翻译-pat)  
+  * [虚拟局域网管理 VTP](#虚拟局域网管理-vtp)  
+  * [DHCP、DNS及Web服务器简单配置](#dhcpdns及web服务器简单配置)  
+  * [WLAN初步配置](#wlan初步配置)  
+* [实验总结](#实验总结)  
 
 ---  
 
@@ -499,7 +522,8 @@ Router#
 
 至此，路由器基本的配置完成。请按照上面 PC 配置表继续配置各个 PC 。
 
-**静态路由**
+### **静态路由**
+
 静态路由是非自适应性路由协议，是由网络管理人员手动配置的，不能够根据网络拓扑的变化而改变。 因此，静态路由简单高效，适用于结构非常简单的网络。
 
 在当前这个简单的拓扑结构中我们可以使用静态路由，即直接告诉路由器到某网络该怎么走即可。
@@ -536,7 +560,8 @@ Router#show ip route    //查看路由表
 >
 > Router(config)#ip route 0.0.0.0 0.0.0.0 *.*.*.* // 缺省全部转发给 *.*.*.* 这个IP
 
-**动态路由 RIP**
+### **动态路由 RIP**
+
 动态路由协议采用自适应路由算法，能够根据网络拓扑的变化而重新计算机最佳路由。
 
 RIP 的全称是 Routing Information Protocol，是距离矢量路由的代表（目前虽然淘汰，但可作为我们学习的对象）。使用 RIP 协议只需要告诉路由器直接相连有哪些网络即可，然后 RIP 根据算法自动构建出路由表。
@@ -578,7 +603,8 @@ Router#show ip route    //查看路由表
 ![69](./pictures/69.png)  
 至此，这些 PC 也能全部相互 ping 通！  
 
-**动态路由 OSPF**
+### **动态路由 OSPF**
+
 OSPF（Open Shortest Path First 开放式最短路径优先）是一个内部网关协议（Interior Gateway Protocol，简称 IGP）， 用于在单一自治系统（Autonomous System，AS）内决策路由。OSPF 性能优于 RIP，是当前域内路由广泛使用的路由协议。
 
 同样的，我们需要把刚才配置的 RIP 路由先清除掉。
@@ -618,7 +644,8 @@ Router#show ip route    //查看路由表
 
 至此，这些 PC 能全部相互 ping 通！
 
-**基于端口的网络地址翻译 PAT**
+### **基于端口的网络地址翻译 PAT**
+
 网络地址转换（NAT，Network Address Translation）被各个 Internet 服务商即 ISP 广泛应用于它们的网络中，也包括 WiFi 网络。 原因很简单，NAT 不仅完美地解决了 lP 地址不足的问题，而且还能够有效地避免来自网络外部的攻击，隐藏并保护网络内部的计算机。
 
 NAT 的实现方式一般有三种：
@@ -748,7 +775,8 @@ Router(config-if)#ip nat outside   // 配置广域网口为 PAT 的外部
 ![79](./pictures/79.png)  
 如图，可以ping成功。  
 
-**虚拟局域网管理 VTP**
+### **虚拟局域网管理 VTP**
+
 前一个实验我们在交换机上进行了 VLAN 的规划和划分。但在实际应用中，我们绝不允许在这些支持VLAN的交换机上进行随意的 VLAN 划分，如此将造成管理混乱！VLAN的划分必须得到统一的规划和管理，这就需要 VTP 协议。
 
 VTP（VLAN Trunk Protocol）即 VLAN 中继协议。VTP 通过 ISL 帧或 Cisco 私有 DTP 帧（可查阅相关资料了解）保持 VLAN 配置统一性，也被称为虚拟局域网干道协议，它是思科私有协议。 VTP 统一管理、增加、删除、调整VLAN，自动地将信息向网络中其它的交换机广播。
@@ -873,7 +901,8 @@ Switch(config)#hostname 2960B    // 更改交换机名称（可选）
 > ![85](./pictures/85.png)  
 > ping通的是同一VLAN下的，不同VLAN下的不能ping通
 
-**DHCP、DNS及Web服务器简单配置**
+### DHCP,DNS及Web服务器简单配置
+
 动态主机配置 DHCP、域名解析 DNS 以及 Web 服务在日常应用中作用巨大，我们构建如下简单的拓扑来进行练习。  
 ![86](./pictures/86.png)  
 
@@ -888,7 +917,8 @@ Switch(config)#hostname 2960B    // 更改交换机名称（可选）
 > * 最后打开浏览器查看我们设置的网址是否展示默认的界面：  
 > ![88](./pictures/88.png)  
 
-**WLAN初步配置**
+### **WLAN初步配置**
+
 WLAN 即 WiFi 当前也是广泛的应用在各种场景。  
 
 我们通过构建如下拓扑的一个家庭 WLAN 来练习一下其相关的配置：  
