@@ -441,51 +441,51 @@ IP 包的分段与重组。
 交通大学路由器基本配置如下：
 以太网口：
 
-> Router>enable   // 从普通模式进入特权模式
-Router#configure terminal   // 进入全局配置模式
-Router(config)#interface f0/0   // 进入配置以太网口模式
-Router(config-if)#ip address 192.168.1.1 255.255.255.0   // 配置该接口的 IP
-Router(config-if)#no shutdown   // 激活接口
-Router(config-if)#^z   // 直接退到特权模式
-Router#
+> Router>enable   // 从普通模式进入特权模式  
+Router#configure terminal   // 进入全局配置模式  
+Router(config)#interface f0/0   // 进入配置以太网口模式  
+Router(config-if)#ip address 192.168.1.1 255.255.255.0   // 配置该接口的 IP  
+Router(config-if)#no shutdown   // 激活接口  
+Router(config-if)#^z   // 直接退到特权模式  
+Router#  
 
 ![59](./pictures/59.png)  
 
 广域网口：
 
-> Router>en   // 从普通模式进入特权模式
-Router#conf t   // 进入全局配置模式
-Router(config)#int s0/0   // 进入配置广域网口模式
-Router(config-if)#ip address 192.168.2.1 255.255.255.0   //配置该接口的 IP
-Router(config-if)#clock rate 64000    // 其为 DCE 端，配置时钟频率
-Router(config-if)#no shutdown   // 激活接口
-Router(config-if)#^z   // 直接退到特权模式
-Router#
+> Router>en   // 从普通模式进入特权模式  
+Router#conf t   // 进入全局配置模式  
+Router(config)#int s0/0   // 进入配置广域网口模式  
+Router(config-if)#ip address 192.168.2.1 255.255.255.0   //配置该接口的 IP  
+Router(config-if)#clock rate 64000    // 其为 DCE 端，配置时钟频率  
+Router(config-if)#no shutdown   // 激活接口  
+Router(config-if)#^z   // 直接退到特权模式  
+Router#  
 
 ![60](./pictures/60.png)  
 
 重庆大学路由器基本配置如下：
 以太网口：
 
-> Router>en   // 从普通模式进入特权模式
-Router#conf t   // 进入全局配置模式
-Router(config)#int f0/0   // 进入配置以太网口模式
-Router(config-if)#ip address 192.168.3.1 255.255.255.0   // 配置该接口的 IP
-Router(config-if)#no shutdown   // 激活接口
-Router(config-if)#^z   // 直接退到特权模式
-Router#
+> Router>en   // 从普通模式进入特权模式  
+Router#conf t   // 进入全局配置模式  
+Router(config)#int f0/0   // 进入配置以太网口模式  
+Router(config-if)#ip address 192.168.3.1 255.255.255.0   // 配置该接口的 IP  
+Router(config-if)#no shutdown   // 激活接口  
+Router(config-if)#^z   // 直接退到特权模式  
+Router#  
 
 ![61](./pictures/61.png)  
 
 广域网口：
 
-> Router>en   // 从普通模式进入特权模式
-Router#conf t   // 进入全局配置模式
-Router(config)#int s0/0   // 进入配置广域网口模式
-Router(config-if)#ip address 192.168.2.2 255.255.255.0   //配置该接口的 IP
-Router(config-if)#no shutdown   // 激活接口
-Router(config-if)#^z   // 直接退到特权模式
-Router#
+> Router>en   // 从普通模式进入特权模式  
+Router#conf t   // 进入全局配置模式  
+Router(config)#int s0/0   // 进入配置广域网口模式  
+Router(config-if)#ip address 192.168.2.2 255.255.255.0   //配置该接口的 IP  
+Router(config-if)#no shutdown   // 激活接口  
+Router(config-if)#^z   // 直接退到特权模式  
+Router#  
 
 ![62](./pictures/62.png)  
 
@@ -500,21 +500,21 @@ Router#
 
 交通大学路由器静态路由配置：
 
-> Router>en   // 从普通模式进入特权模式
-Router#conf t   // 进入全局配置模式
-Router(config)#ip route 192.168.3.0 255.255.255.0 192.168.2.2   // 告诉交通大学路由器到 192.168.3.0 这个网络的下一跳是 192.168.2.2
-Router(config)#exit   //退到特权模式
-Router#show ip route    //查看路由表
+> Router>en   // 从普通模式进入特权模式  
+Router#conf t   // 进入全局配置模式  
+Router(config)#ip route 192.168.3.0 255.255.255.0 192.168.2.2   // 告诉交通大学路由器到 192.168.3.0 这个网络的下一跳是 192.168.2.2  
+Router(config)#exit   //退到特权模式  
+Router#show ip route    //查看路由表  
 
 ![63](./pictures/63.png)  
 
 重庆大学路由器静态路由配置：
 
-> Router>en   // 从普通模式进入特权模式
-Router#conf t   // 进入全局配置模式
-Router(config)#ip route 192.168.1.0 255.255.255.0 192.168.2.1   // 告诉重庆大学路由器到 192.168.1.0 这个网络的下一跳是 192.168.2.1
-Router(config)#exit   //退到特权模式
-Router#show ip route    //查看路由表
+> Router>en   // 从普通模式进入特权模式  
+Router#conf t   // 进入全局配置模式  
+Router(config)#ip route 192.168.1.0 255.255.255.0 192.168.2.1   // 告诉重庆大学路由器到 192.168.1.0 这个网络的下一跳是 192.168.2.1  
+Router(config)#exit   //退到特权模式  
+Router#show ip route    //查看路由表  
 
 ![64](./pictures/64.png)
 
@@ -544,25 +544,25 @@ RIP 的全称是 Routing Information Protocol，是距离矢量路由的代表�
 
 交通大学路由器 RIP 路由配置：
 
-> Router>en   // 从普通模式进入特权模式
-Router#conf t   // 进入全局配置模式
-Router(config)#router rip   // 启用 RIP 路由协议，注意是 router 命令
-Router(config-router)#network 192.168.1.0   // 网络 192.168.1.0 与我直连
-Router(config-router)#network 192.168.2.0   // 网络 192.168.2.0 与我直连
-Router(config-router)#^z   //直接退到特权模式
-Router#show ip route    //查看路由表
+> Router>en   // 从普通模式进入特权模式  
+Router#conf t   // 进入全局配置模式  
+Router(config)#router rip   // 启用 RIP 路由协议，注意是 router 命令  
+Router(config-router)#network 192.168.1.0   // 网络 192.168.1.0 与我直连  
+Router(config-router)#network 192.168.2.0   // 网络 192.168.2.0 与我直连  
+Router(config-router)#^z   //直接退到特权模式  
+Router#show ip route    //查看路由表  
 
 ![67](./pictures/67.png)
 
 重庆大学路由器 RIP 路由配置：
 
-> Router>en   // 从普通模式进入特权模式
-Router#conf t   // 进入全局配置模式
-Router(config)#router rip   // 启用RIP路由协议，注意是 router 命令
-Router(config-router)#network 192.168.3.0   // 网络 192.168.3.0 与我直连
-Router(config-router)#network 192.168.2.0   // 网络 192.168.2.0 与我直连
-Router(config-router)#^z   //直接退到特权模式
-Router#show ip route    //查看路由表
+> Router>en   // 从普通模式进入特权模式  
+Router#conf t   // 进入全局配置模式  
+Router(config)#router rip   // 启用RIP路由协议，注意是 router 命令  
+Router(config-router)#network 192.168.3.0   // 网络 192.168.3.0 与我直连  
+Router(config-router)#network 192.168.2.0   // 网络 192.168.2.0 与我直连  
+Router(config-router)#^z   //直接退到特权模式  
+Router#show ip route    //查看路由表  
 
 ![68](./pictures/68.png)  
 
@@ -584,25 +584,25 @@ OSPF（Open Shortest Path First 开放式最短路径优先）是一个内部网
 
 交通大学路由器 OSPF 路由配置：
 
-> Router>en   // 从普通模式进入特权模式
-Router#conf t   // 进入全局配置模式
-Router(config)#router ospf 1   // 启用 OSPF 路由协议，进程号为1（可暂不理会进程号概念）
-Router(config-router)#network 192.168.1.0 0.0.0.255 area 0   // 自治域0中的属于 192.168.1.0/24 网络的所有主机（反向掩码）参与 OSPF
-Router(config-router)#network 192.168.2.0 0.0.0.255 area 0   // 自治域0中的属于 192.168.2.0/24 网络的所有主机（反向掩码）参与 OSPF
-Router(config-router)#^z   //直接退到特权模式
-Router#show ip route    //查看路由表
+> Router>en   // 从普通模式进入特权模式  
+Router#conf t   // 进入全局配置模式  
+Router(config)#router ospf 1   // 启用 OSPF 路由协议，进程号为1（可暂不理会进程号概念）  
+Router(config-router)#network 192.168.1.0 0.0.0.255 area 0   // 自治域0中的属于 192.168.1.0/24 网络的所有主机（反向掩码）参与 OSPF  
+Router(config-router)#network 192.168.2.0 0.0.0.255 area 0   // 自治域0中的属于 192.168.2.0/24 网络的所有主机（反向掩码）参与 OSPF  
+Router(config-router)#^z   //直接退到特权模式  
+Router#show ip route    //查看路由表  
 
 ![71](./pictures/71.png)
 
 重庆大学路由器 OSPF 路由配置：
 
-> Router>en   // 从普通模式进入特权模式
-Router#conf t   // 进入全局配置模式
-Router(config)#router ospf 1   // 启用 OSPF 路由协议，进程号为1
-Router(config-router)#network 192.168.3.0 0.0.0.255 area 0   // 自治域0中的属于 192.168.3.0/24 网络的所有主机（反向掩码）参与 OSPF
-Router(config-router)#network 192.168.2.0 0.0.0.255 area 0   // 自治域0中的属于 192.168.2.0/24 网络的所有主机（反向掩码）参与 OSPF
-Router(config-router)#^z   //直接退到特权模式
-Router#show ip route    //查看路由表
+> Router>en   // 从普通模式进入特权模式  
+Router#conf t   // 进入全局配置模式  
+Router(config)#router ospf 1   // 启用 OSPF 路由协议，进程号为1  
+Router(config-router)#network 192.168.3.0 0.0.0.255 area 0   // 自治域0中的属于 192.168.3.0/24 网络的所有主机（反向掩码）参与 OSPF  
+Router(config-router)#network 192.168.2.0 0.0.0.255 area 0   // 自治域0中的属于 192.168.2.0/24 网络的所有主机（反向掩码）参与 OSPF  
+Router(config-router)#^z   //直接退到特权模式  
+Router#show ip route    //查看路由表  
 
 ![72](./pictures/72.png)
 
@@ -651,56 +651,56 @@ NAT 的实现方式一般有三种：
 
 以太网口：
 
-> Router>en   // 从普通模式进入特权模式
-Router#conf t   // 进入全局配置模式
-Router(config)#int f0/0   // 进入配置以太网口模式
-Router(config-if)#ip address 192.168.1.1 255.255.255.0   // 配置 IP
-Router(config-if)#no shutdown   // 激活接口
+> Router>en   // 从普通模式进入特权模式  
+Router#conf t   // 进入全局配置模式  
+Router(config)#int f0/0   // 进入配置以太网口模式  
+Router(config-if)#ip address 192.168.1.1 255.255.255.0   // 配置 IP  
+Router(config-if)#no shutdown   // 激活接口  
 
 广域网口：
 
-> Router>en   // 从普通模式进入特权模式
-Router#conf t   // 进入全局配置模式
-Router(config)#int s0/0   // 进入配置广域网口模式
-Router(config-if)#ip address 202.202.240.1 255.255.255.0   //配置 IP
-Router(config-if)#clock rate 64000    // 其为 DCE 端，配置时钟频率
-Router(config-if)#no shutdown   // 激活接口
+> Router>en   // 从普通模式进入特权模式  
+Router#conf t   // 进入全局配置模式  
+Router(config)#int s0/0   // 进入配置广域网口模式  
+Router(config-if)#ip address 202.202.240.1 255.255.255.0   //配置 IP  
+Router(config-if)#clock rate 64000    // 其为 DCE 端，配置时钟频率  
+Router(config-if)#no shutdown   // 激活接口  
 
 重庆大学路由器接口配置如下：
 
 以太网口：
 
-> Router>en   // 从普通模式进入特权模式
-Router#conf t   // 进入全局配置模式
-Router(config)#int f0/0   // 进入配置以太网口模式
-Router(config-if)#ip address 8.8.8.1 255.255.255.0   // 配置 IP
-Router(config-if)#no shutdown   // 激活接口
+> Router>en   // 从普通模式进入特权模式  
+Router#conf t   // 进入全局配置模式  
+Router(config)#int f0/0   // 进入配置以太网口模式  
+Router(config-if)#ip address 8.8.8.1 255.255.255.0   // 配置 IP  
+Router(config-if)#no shutdown   // 激活接口  
 
 广域网口：
 
-> Router>en   // 从普通模式进入特权模式
-Router#conf t   // 进入全局配置模式
-Router(config)#int s0/0   // 进入配置广域网口模式
-Router(config-if)#ip address 202.202.240.2 255.255.255.0   // 配置 IP
-Router(config-if)#no shutdown   // 激活接口
+> Router>en   // 从普通模式进入特权模式  
+Router#conf t   // 进入全局配置模式  
+Router(config)#int s0/0   // 进入配置广域网口模式  
+Router(config-if)#ip address 202.202.240.2 255.255.255.0   // 配置 IP  
+Router(config-if)#no shutdown   // 激活接口  
 
 交通大学路由器 OSPF 路由配置：
 
-> Router>en   // 从普通模式进入特权模式
-Router#conf t   // 进入全局配置模式
-Router(config)#router ospf 1   // 启用 OSPF 路由协议，进程号为1（可暂不理会进程号概念）
-Router(config-router)#network 192.168.1.0 0.0.0.255 area 0   // 自治域0中的属于192.168.1.0/24网络的所有主机（反向掩码）参与 OSPF
-Router(config-router)#network 202.202.240.0 0.0.0.255 area 0   // 自治域0中的属于202.202.240.0/24网络的所有主机（反向掩码）参与 OSPF
+> Router>en   // 从普通模式进入特权模式  
+Router#conf t   // 进入全局配置模式  
+Router(config)#router ospf 1   // 启用 OSPF 路由协议，进程号为1（可暂不理会进程号概念）  
+Router(config-router)#network 192.168.1.0 0.0.0.255 area 0   // 自治域0中的属于192.168.1.0/24网络的所有主机（反向掩码）参与 OSPF  
+Router(config-router)#network 202.202.240.0 0.0.0.255 area 0   // 自治域0中的属于202.202.240.0/24网络的所有主机（反向掩码）参与 OSPF  
 
 ![75](./pictures/75.png)
 
 重庆大学路由器 OSPF 路由配置：
 
-> Router>en   // 从普通模式进入特权模式
-Router#conf t   // 进入全局配置模式
-Router(config)#router ospf 1   // 启用 OSPF 路由协议，进程号为1
-Router(config-router)#network 202.202.240.0 0.0.0.255 area 0   // 自治域0中的属于202.202.240.0/24网络的所有主机（反向掩码）参与 OSPF
-Router(config-router)#network 8.8.8.0 0.0.0.255 area 0   // 自治域0中的属于8.8.8.0/24网络的所有主机（反向掩码）参与 OSPF
+> Router>en   // 从普通模式进入特权模式  
+Router#conf t   // 进入全局配置模式  
+Router(config)#router ospf 1   // 启用 OSPF 路由协议，进程号为1  
+Router(config-router)#network 202.202.240.0 0.0.0.255 area 0   // 自治域0中的属于202.202.240.0/24网络的所有主机（反向掩码）参与 OSPF  
+Router(config-router)#network 8.8.8.0 0.0.0.255 area 0   // 自治域0中的属于8.8.8.0/24网络的所有主机（反向掩码）参与 OSPF  
 
 ![76](./pictures/76.png)
 
@@ -710,12 +710,12 @@ Router(config-router)#network 8.8.8.0 0.0.0.255 area 0   // 自治域0中的属�
 
 重庆大学路由器丢包的配置：
 
-> Router>en   // 从普通模式进入特权模式
-Router#conf t   // 进入全局配置模式
-Router(config)#access-list 1 deny 192.168.1.0 0.0.0.255  // 创建 ACL 1，丢弃/不转发来自 192.168.1.0/24 网络的所有包
-Router(config)#access-list 1 permit any  // 添加 ACL 1 的规则，转发其它所有网络的包
-Router(config)#int s0/0   // 配置广域网口
-Router(config-if)#ip access-group 1 in  // 在广域网口上对进来的包实施 ACL 1 中的规则，实际就是广域网口如果收到来自 192.168.1.0/24 IP的包即丢弃
+> Router>en   // 从普通模式进入特权模式  
+Router#conf t   // 进入全局配置模式  
+Router(config)#access-list 1 deny 192.168.1.0 0.0.0.255  // 创建 ACL 1，丢弃/不转发来自 192.168.1.0/24 网络的所有包  
+Router(config)#access-list 1 permit any  // 添加 ACL 1 的规则，转发其它所有网络的包  
+Router(config)#int s0/0   // 配置广域网口  
+Router(config-if)#ip access-group 1 in  // 在广域网口上对进来的包实施 ACL 1 中的规则，实际就是广域网口如果收到来自 192.168.1.0/24 IP的包即丢弃  
 
 ![77](./pictures/77.png)
 
@@ -725,14 +725,14 @@ Router(config-if)#ip access-group 1 in  // 在广域网口上对进来的包实�
 
 交通大学路由器 PAT 配置：
 
-> Router>en   // 从普通模式进入特权模式
-Router#conf t   // 进入全局配置模式
-Router(config)#access-list 1 permit 192.168.1.0 0.0.0.255  // 创建 ACL 1，允许来自 192.168.1.0/24 网络的所有包
-Router(config)#ip nat inside source list 1 interface s0/0 overload  // 来自于 ACL 中的 IP 将在广域网口实施 PAT
-Router(config)#int f0/0   // 配置以太网口
-Router(config-if)#ip nat inside   // 配置以太网口为 PAT 的内部
-Router(config)#int s0/0   // 配置广域网口
-Router(config-if)#ip nat outside   // 配置广域网口为 PAT 的外部
+> Router>en   // 从普通模式进入特权模式  
+Router#conf t   // 进入全局配置模式  
+Router(config)#access-list 1 permit 192.168.1.0 0.0.0.255  // 创建 ACL 1，允许来自 192.168.1.0/24 网络的所有包  
+Router(config)#ip nat inside source list 1 interface s0/0 overload  // 来自于 ACL 中的 IP 将在广域网口实施 PAT  
+Router(config)#int f0/0   // 配置以太网口  
+Router(config-if)#ip nat inside   // 配置以太网口为 PAT 的内部  
+Router(config)#int s0/0   // 配置广域网口  
+Router(config-if)#ip nat outside   // 配置广域网口为 PAT 的外部  
 
 ![78](./pictures/78.png)
 
@@ -761,28 +761,28 @@ VTP（VLAN Trunk Protocol）即 VLAN 中继协议。VTP 通过 ISL 帧或 Cisco 
 
 我们将在核心交换机 3560上进行如下工作：
 
-1. 设置为 server 模式，VTP 域为 cqjtu
-2. 新建 VLAN 2，网络号 192.168.1.0/24，网关 192.168.1.1
-3. 新建 VLAN 3，网络号 192.168.2.0/24，网关 192.168.2.1
+1. 设置为 server 模式，VTP 域为 cqjtu  
+2. 新建 VLAN 2，网络号 192.168.1.0/24，网关 192.168.1.1  
+3. 新建 VLAN 3，网络号 192.168.2.0/24，网关 192.168.2.1  
 
 3560 VTP Server 配置：
 
 > Switch>en
-Switch#conf t
-Switch(config)#hostname 3560    // 更改交换机名称（可选）
-3560(config)#vtp domain cqjtu   // 设置 VTP 域名称为 cqjtu
-3560(config)#vtp mode server    // 设置其为 VTP 服务器模式
-3560(config)#vlan 2             // 新建VLAN 2
-3560(config-vlan)#name computer // 设置 VLAN 2 的别名（可选）
-3560(config-vlan)#exit
-3560(config)#vlan 3             // 再建 VLAN 3
-3560(config-vlan)#name communication    //设置 VLAN 2 的别名（可选）
-3560(config-vlan)#exit
-3560(config)#int vlan 2    // 配置接口 VLAN 2，它将是该子网（左边）的网关
-3560(config-if)#ip address 192.168.1.1 255.255.255.0
-3560(config-if)#exit
-3560(config)#int vlan 3    // 配置接口 VLAN 3，它将是该子网（右边）的网关
-3560(config-if)#ip address 192.168.2.1 255.255.255.0
+Switch#conf t  
+Switch(config)#hostname 3560    // 更改交换机名称（可选）  
+3560(config)#vtp domain cqjtu   // 设置 VTP 域名称为 cqjtu  
+3560(config)#vtp mode server    // 设置其为 VTP 服务器模式  
+3560(config)#vlan 2             // 新建VLAN 2  
+3560(config-vlan)#name computer // 设置 VLAN 2 的别名（可选）  
+3560(config-vlan)#exit  
+3560(config)#vlan 3             // 再建 VLAN 3  
+3560(config-vlan)#name communication    //设置 VLAN 2 的别名（可选）  
+3560(config-vlan)#exit  
+3560(config)#int vlan 2    // 配置接口 VLAN 2，它将是该子网（左边）的网关  
+3560(config-if)#ip address 192.168.1.1 255.255.255.0  
+3560(config-if)#exit  
+3560(config)#int vlan 3    // 配置接口 VLAN 3，它将是该子网（右边）的网关  
+3560(config-if)#ip address 192.168.2.1 255.255.255.0  
 
 ![81](./pictures/81.png)
 
@@ -795,22 +795,22 @@ Switch(config)#hostname 3560    // 更改交换机名称（可选）
 
 2960A（左边） VTP Client 配置：
 
-> Switch>en
-Switch#conf t
-Switch(config)#hostname 2960A    // 更改交换机名称（可选）
-2960A(config)#vtp domain cqjtu   // 加入名为 cqjtu 的 VTP 域
-2960A(config)#vtp mode client    // 设置模式为 VTP 客户
-2960A(config)#int g0/1    // 配置与核心交换机 3560 连接的 g0/1 千兆接口
-2960A(config-if)#switchport mode trunk    // 设置该接口为中继（trunk）模式
-2960A(config-if)#switchport trunk allowed vlan all  // 允许为所有的 VLAN 中继
-2960A(config-if)#exit
-2960A(config)#int f0/1    // 配置接口 1
-2960A(config-if)#switchport mode access    // 设置该接口为正常访问模式
-2960A(config-if)#switchport access vlan 2  // 将接口划分到 VLAN 2
-2960A(config-if)#exit
-2960A(config)#int f0/2    // 配置接口 2
-2960A(config-if)#switchport mode access    // 设置该接口为正常访问模式
-2960A(config-if)#switchport access vlan 3  // 将接口划分到 VLAN 3
+> Switch>en  
+Switch#conf t  
+Switch(config)#hostname 2960A    // 更改交换机名称（可选）  
+2960A(config)#vtp domain cqjtu   // 加入名为 cqjtu 的 VTP 域  
+2960A(config)#vtp mode client    // 设置模式为 VTP 客户  
+2960A(config)#int g0/1    // 配置与核心交换机 3560 连接的 g0/1 千兆接口  
+2960A(config-if)#switchport mode trunk    // 设置该接口为中继（trunk）模式  
+2960A(config-if)#switchport trunk allowed vlan all  // 允许为所有的 VLAN 中继  
+2960A(config-if)#exit  
+2960A(config)#int f0/1    // 配置接口 1  
+2960A(config-if)#switchport mode access    // 设置该接口为正常访问模式  
+2960A(config-if)#switchport access vlan 2  // 将接口划分到 VLAN 2  
+2960A(config-if)#exit  
+2960A(config)#int f0/2    // 配置接口 2  
+2960A(config-if)#switchport mode access    // 设置该接口为正常访问模式  
+2960A(config-if)#switchport access vlan 3  // 将接口划分到 VLAN 3  
 
 ![82](./pictures/82.png)
 
@@ -823,22 +823,22 @@ Switch(config)#hostname 2960A    // 更改交换机名称（可选）
 
 2960B（右边） VTP Client 配置：
 
-> Switch>en
-Switch#conf t
-Switch(config)#hostname 2960B    // 更改交换机名称（可选）
-2960B(config)#vtp domain cqjtu   // 加入名为 cqjtu 的 VTP 域
-2960B(config)#vtp mode client    // 设置模式为 VTP 客户
-2960B(config)#int g0/1    // 配置与核心交换机 3560 连接的 g0/1 千兆接口
-2960B(config-if)#switchport mode trunk    // 设置该接口为中继（trunk）模式
-2960B(config-if)#switchport trunk allowed vlan all  // 允许为所有的 VLAN 中继
-2960B(config-if)#exit
-2960B(config)#int f0/1    // 配置接口 1
-2960B(config-if)#switchport mode access    // 设置该接口为正常访问模式
-2960B(config-if)#switchport access vlan 2  // 将接口划分到 VLAN 2
-2960B(config-if)#exit
-2960B(config)#int f0/2    // 配置接口 2
-2960B(config-if)#switchport mode access    // 设置该接口为正常访问模式
-2960B(config-if)#switchport access vlan 3  // 将接口划分到 VLAN 3
+> Switch>en  
+Switch#conf t  
+Switch(config)#hostname 2960B    // 更改交换机名称（可选）  
+2960B(config)#vtp domain cqjtu   // 加入名为 cqjtu 的 VTP 域  
+2960B(config)#vtp mode client    // 设置模式为 VTP 客户  
+2960B(config)#int g0/1    // 配置与核心交换机 3560 连接的 g0/1 千兆接口  
+2960B(config-if)#switchport mode trunk    // 设置该接口为中继（trunk）模式  
+2960B(config-if)#switchport trunk allowed vlan all  // 允许为所有的 VLAN 中继  
+2960B(config-if)#exit  
+2960B(config)#int f0/1    // 配置接口 1  
+2960B(config-if)#switchport mode access    // 设置该接口为正常访问模式  
+2960B(config-if)#switchport access vlan 2  // 将接口划分到 VLAN 2  
+2960B(config-if)#exit  
+2960B(config)#int f0/2    // 配置接口 2  
+2960B(config-if)#switchport mode access    // 设置该接口为正常访问模式  
+2960B(config-if)#switchport access vlan 3  // 将接口划分到 VLAN 3  
 
 ![83](./pictures/83.png)
 
@@ -846,7 +846,7 @@ Switch(config)#hostname 2960B    // 更改交换机名称（可选）
 
 > 📬 秘籍
 > 此时在 3 个交换机的特权模式下，都可使用show vtp status命令查看 VTP 状态，使用show vlan命令查看 VLAN 状态:  
-> ![84](./pictures/84.png)
+> ![84](./pictures/84.png)  
 
 各 PC 连接的交换机和接口以及网络配置如下：
 
@@ -889,13 +889,13 @@ WLAN 即 WiFi 当前也是广泛的应用在各种场景。
 > 📬 秘籍
 >
 > 笔记本及台式机默认只有有线网卡，请先关机，在关机状态下删除有线网卡，添加无线网卡，然后再开机。  
-> ![89](./pictures/89.png)
+> ![89](./pictures/89.png)  
 
 然后查看计算机是否获取到IP:  
-![90](./pictures/90.png)
+![90](./pictures/90.png)  
 
 然后用台式机ping另一台台式机和笔记本：  
-![92](./pictures/92.png)
+![92](./pictures/92.png)  
 ![93](./pictures/93.png)  
 都能够ping通。  
 
@@ -906,8 +906,8 @@ WLAN 即 WiFi 当前也是广泛的应用在各种场景。
 
 开启 DHCP 功能
 ![94](./pictures/94.png)  
-开启成功。
-至此家庭WLAN构建完成。
+开启成功。  
+至此家庭WLAN构建完成。  
 
 ## **实验总结**
 
