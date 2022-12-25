@@ -8,8 +8,8 @@
 
 在电脑CMD中使用`ipconfig/all`后查看自己的网络配置：  
 
-![实作一（1）](./pictures/1.png)
-![实作一（2）](./pictures/2.png)
+![实作一（1）](./pictures/1.png)  
+![实作一（2）](./pictures/2.png)  
 分析：  
 
 * 主机名：本机的昵称  
@@ -41,17 +41,17 @@
 
 #### **实作二**
 
-使用 ping/? 命令了解该命令的各种选项并实际使用：
+使用 ping/? 命令了解该命令的各种选项并实际使用：  
 ![实作二（4）](./pictures/4.png)  
 
-* ``ping [-t]``:
-![实作二（5）](./pictures/5.png)
-* ``ping [-n]``
-![实作二（6）](./pictures/6.png)
-* ``ping [-l]``
-![实作二（7）](./pictures/7.png)
-* ``ping [-i]``:给定生存时间（TTL）
-![实作二（8）](./pictures/8.png)
+* ``ping [-t]``:  
+![实作二（5）](./pictures/5.png)  
+* ``ping [-n]``  
+![实作二（6）](./pictures/6.png)  
+* ``ping [-l]``  
+![实作二（7）](./pictures/7.png)  
+* ``ping [-i]``:给定生存时间（TTL）  
+![实作二（8）](./pictures/8.png)  
 
 ### ***tracert***
 
@@ -60,7 +60,7 @@
 使用 tracert www.bilibili.com 命令，查看反馈的信息，了解到某计算机如 www.baidu.com 中间经过了哪些节点（路由器）及其它状态。
 > 可通过网站 [http://ip.cn] 查看这些节点位于何处，是哪个公司的，大致清楚本机到百度服务器之间的路径。
 
-![实作一（9）](./pictures/9.png)
+![实作一（9）](./pictures/9.png)  
 分析:
 
 1. 第一列的数字1~10表示经过了10个路由节点
@@ -93,8 +93,8 @@
 
 #### **实作一**  
 
-运行``arp -a``命令查看当前的 arp 缓存， 请留意缓存了些什么。
-![实作一（10）](./pictures/10.png)
+运行``arp -a``命令查看当前的 arp 缓存， 请留意缓存了些什么。  
+![实作一（10）](./pictures/10.png)  
 用来储存IP地址和MAC地址的缓冲区，其本质就是一个IP地址-->MAC地址的对应表，表中每一个条目分别记录了网络上其他主机的IP地址和对应的MAC地址
 
 #### **实作二**
@@ -141,8 +141,8 @@ Windows 系统将一些常用的端口与服务记录在 C:\WINDOWS\system32\dri
 
 #### **实作二**
 
-使用``netstat -an``命令，查看计算机当前的网络连接状况。
-![实作二（16）](./pictures/16.png)
+使用``netstat -an``命令，查看计算机当前的网络连接状况。  
+![实作二（16）](./pictures/16.png)  
 
 ### ***DNS***
 
@@ -156,12 +156,12 @@ Windows 系统将一些固定的/静态的 DNS 信息记录在 ``C:\WINDOWS\syst
 #### **实作二**
 
 解析过的 DNS 记录将会被缓存，以利于加快解析速度。请使用``ipconfig /displaydns``命令查看。我们也可以使用``ipconfig /flushdns``命令来清除所有的 DNS 缓存。
-![实作二（17）](./pictures/17.png)
+![实作二（17）](./pictures/17.png)  
 
 #### **实作三**
 
-使用``nslookup qige.io``命令，将使用默认的``DNS``服务器查询该域名。
-![实作三（18）](./pictures/18.png)
+使用``nslookup qige.io``命令，将使用默认的``DNS``服务器查询该域名。  
+![实作三（18）](./pictures/18.png)  
 
 ### ***cache***
 > ``cache``即缓存，是 IT 领域一个重要的技术。我们此处提到的``cache``主要是浏览器缓存。  
@@ -170,14 +170,14 @@ Windows 系统将一些固定的/静态的 DNS 信息记录在 ``C:\WINDOWS\syst
 #### **实作一**
 打开 Chrome 或 Firefox 浏览器，访问``https://qige.io``，接下来敲``F12``键 或 ``Ctrl + Shift + I``组合键打开开发者工具，选择``Network``面板后刷新页面，你会在开发者工具底部看到加载该页面花费的时间。请进一步查看哪些文件被``cache``了，哪些没有。
 ![实作一（19）](./pictures/19.png)  
-如图所示：点击刷新界面只有qige.io被重新加载了。
-![实作一（20）](./pictures/20.png)
+如图所示：点击刷新界面只有qige.io被重新加载了。  
+![实作一（20）](./pictures/20.png)  
 
 #### **实作二**
 
 接下来仍在 Network 面板，选择 Disable cache 选项框，表明当前不使用 cache，页面数据全部来自于 Internet，刷新页面，再次在开发者工具底部查看加载该页面花费的时间。你可比对与有 cache 时的加载速度差异。  
-![实作一（21）](./pictures/21.png)
-选择禁用缓存后,对比上面使用内存的底部加载页面时间可以发现,使用内存加载页面花费1.01s,禁用内存花费2.17s,速度明显降低。
+![实作一（21）](./pictures/21.png)  
+选择禁用缓存后,对比上面使用内存的底部加载页面时间可以发现,使用内存加载页面花费1.01s,禁用内存花费2.17s,速度明显降低。  
 
 ---
 
@@ -187,8 +187,8 @@ Windows 系统将一些固定的/静态的 DNS 信息记录在 ``C:\WINDOWS\syst
 
 #### **实作一**
 
-使用 Wireshark 任意进行抓包，熟悉 Ethernet 帧的结构，如：目的 MAC、源 MAC、类型、字段等。
-![实作一（22）](./pictures/22.png)
+使用 Wireshark 任意进行抓包，熟悉 Ethernet 帧的结构，如：目的 MAC、源 MAC、类型、字段等。  
+![实作一（22）](./pictures/22.png)  
 > 问题：
 你会发现 Wireshark 展现给我们的帧中没有校验字段，请了解一下原因。  
 >
@@ -198,14 +198,14 @@ Windows 系统将一些固定的/静态的 DNS 信息记录在 ``C:\WINDOWS\syst
 
 了解子网内/外通信时的 MAC 地址。
 
-1. 然后``ping qige.io``（或者本子网外的主机都可以），同时用 Wireshark 抓这些包（可 icmp 过滤），记录一下发出帧的目的 MAC 地址以及返回帧的源 MAC 地址是多少？这个 MAC 地址是谁的？
-![实作二（23）](./pictures/23.png)
-![实作二（24）](./pictures/24.png)
-   如图，由于本机与qige.io不在同一子网，因此源mac地址应该为本机所在子网网关的mac地址。
-2. 再次``ping www.cqjtu.edu.cn``（或者本子网外的主机都可以），同时用 Wireshark 抓这些包（可 icmp 过滤），记录一下发出帧的目的 MAC 地址以及返回帧的源 MAC 地址又是多少？这个 MAC 地址又是谁的？
-![实作二（25）](./pictures/25.png)
-![实作二（26）](./pictures/26.png)
-源mac地址应该为本机所在子网网关的mac地址，目的mac地址为[www.cqjtu.edu.cn]（218.70.34.236）所在子网网关的mac地址。
+1. 然后``ping qige.io``（或者本子网外的主机都可以），同时用 Wireshark 抓这些包（可 icmp 过滤），记录一下发出帧的目的 MAC 地址以及返回帧的源 MAC 地址是多少？这个 MAC 地址是谁的？  
+![实作二（23）](./pictures/23.png)  
+![实作二（24）](./pictures/24.png)  
+   如图，由于本机与qige.io不在同一子网，因此源mac地址应该为本机所在子网网关的mac地址。  
+2. 再次``ping www.cqjtu.edu.cn``（或者本子网外的主机都可以），同时用 Wireshark 抓这些包（可 icmp 过滤），记录一下发出帧的目的 MAC 地址以及返回帧的源 MAC 地址又是多少？这个 MAC 地址又是谁的？  
+![实作二（25）](./pictures/25.png)  
+![实作二（26）](./pictures/26.png)  
+源mac地址应该为本机所在子网网关的mac地址，目的mac地址为[www.cqjtu.edu.cn]（218.70.34.236）所在子网网关的mac地址。  
 
 > 问题：
 通过以上的实验，你会发现：
@@ -221,7 +221,7 @@ Windows 系统将一些固定的/静态的 DNS 信息记录在 ``C:\WINDOWS\syst
 #### **实作一**
 
 使用 Wireshark 任意进行抓包（可用 ip 过滤），熟悉 IP 包的结构，如：版本、头部长度、总长度、TTL、协议类型等字段。
-![实作一（27）](./pictures/27.png)
+![实作一（27）](./pictures/27.png)  
 版本：4；头部长度：20 bytes；总长度：40；TTL:128;协议类型：TCP
 
 > 问题：
