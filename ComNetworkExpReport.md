@@ -1,10 +1,18 @@
 # Computer Network Experiment Report  
 
----  
+---
+
+## 目录
 
 ## **验证性实验**  
 
-### ***ipconfig***  
+### ***ipconfig***
+
+---  
+
+## 验证性实验  
+
+### ipconfig  
 
 在电脑CMD中使用`ipconfig/all`后查看自己的网络配置：  
 
